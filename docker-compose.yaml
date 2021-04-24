@@ -1,0 +1,27 @@
+version: '2'
+
+services: 
+    node: 
+        container_name: app
+        restart: always
+        build: .
+        ports: 
+            - '5000:3000'
+        links:
+            - mongo
+        volumes: 
+            - .:/usr/src/app
+
+    
+    mongo:
+        container_name: mongodb
+        image: mongo:latest
+        ports: 
+            - '27017:27017'
+        logging: 
+            driver: none
+        # environment:
+        #     - MONGO_DATA_DIR=/data/db
+        #     - MONGO_LOG_DIR=/dev/null
+        # volumes:
+        #     - ./data/mongo:/data/db 
