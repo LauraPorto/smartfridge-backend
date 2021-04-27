@@ -23,5 +23,5 @@ services:
         # environment:
         #     - MONGO_DATA_DIR=/data/db
         #     - MONGO_LOG_DIR=/dev/null
-        # volumes:
-        #     - ./data/mongo:/data/db 
+        volumes:
+            - ./data/mongo:/data/db 
