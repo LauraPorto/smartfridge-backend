@@ -21,16 +21,18 @@ class StoreController {
 
     //PUT
     //Añadir alimentos a la despensa 
-    async addIngredients (name) {
-        await Store.food.findOne({name: name});
-        const ingredientsAdded = Store.food.push(name);
+    async addIngredients (userId, name) {
+        await Store.findOne(userId);
+        const foodStore = Store.food;
+        const ingredientsAdded = foodStore.push({name: name});
         return ingredientsAdded;
     }
 
     //Añadir alimentos prohibidos a la despensa 
-    async addForbiddenIngredients (name) {
-        await Store.forbiddenFood.findOne({name: name});
-        const ingredientsAdded = Store.forbiddenFood.push(name);
+    async addForbiddenIngredients (userId, name) {
+        await Store.forbiddenFood.findOne(userId);
+        const forbiddenFood = Store.forbiddenFood;
+        const ingredientsAdded = forbiddenFood.push({name: name});
         return ingredientsAdded;
     }
 

@@ -8,7 +8,6 @@ let kitchenSchema = mongoose.Schema({
     },
     userId: {
         type: ObjectId, 
-        required: true, 
         ref: 'User'
     },
     name: {

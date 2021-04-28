@@ -61,11 +61,12 @@ router.delete('/exception/:id', async (req, res) => {
 
 //PUT 
 //Añadir ingredientes a la despensa
-router.put('/:name', async (req, res) => {
+router.put('/:userId', async (req, res) => {
     try{
-        const name = req.params.name;
+        const userId = req.params.userId;
+        const name = req.body;
 
-        const findIngredient = await storeController.addIngredients(name);
+        const findIngredient = await storeController.addIngredients(userId, name);
 
         return res.status(200).json(findIngredient);
 
@@ -77,11 +78,12 @@ router.put('/:name', async (req, res) => {
 });
 
 //Añadir ingredientes a la despensa
-router.put('/exception/:name', async (req, res) => {
+router.put('/exception/:userId', async (req, res) => {
     try{
-        const name = req.params.name;
+        const name = req.body;
+        const userId = req.params.userId;
 
-        const findIngredient = await storeController.addForbiddenIngredients(name);
+        const findIngredient = await storeController.addForbiddenIngredients(userId, name);
 
         return res.status(200).json(findIngredient);
 
