@@ -50,13 +50,13 @@ class UserController {
     //PUT
     //Modificar los datos de usuario
     async update(id,user) {
-        return User.findOneAndUpdate(id, user, {new: true});
+        return User.findByIdAndUpdate(id, user, {new: true});
     };
 
     //DELETE
     //Borrar un usuario
     async delete(id){
-        return await User.findOneAndDelete(id);
+        return await User.findByIdAndDelete(id);
     };
 }
 

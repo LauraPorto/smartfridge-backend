@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const userController = require('../Controllers/userController');
-const auth = require('../Middleware/auth');
+const auth = require('../middleware/auth');
 
 //POST
 //Registro de usuarios
@@ -56,7 +56,7 @@ router.get('/', async (req, res) => {
 
 //PUT
 //Modificar los datos del usuario
-router.put('/:id', auth, async (req, res) => {
+router.put('/:id', async (req, res) => {
 
     try{
         const id = req.params.id;
