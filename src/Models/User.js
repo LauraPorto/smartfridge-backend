@@ -5,7 +5,6 @@ const ObjectId = mongoose.Types.ObjectId;
 let userSchema = mongoose.Schema({
     storeId : {
         type: ObjectId, 
-        required: true, 
         ref: 'Store'
     },
     name : {
@@ -34,6 +33,7 @@ let userSchema = mongoose.Schema({
         tye: Date
     }
 });
+
 
 const User = mongoose.model('user', userSchema);
 module.exports = User;
