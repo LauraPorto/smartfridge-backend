@@ -45,7 +45,19 @@ class UserController {
     //Todos los usuarios
     async indexAll(){
         return await User.find();
-    }
+    };
+
+    //PUT
+    //Modificar los datos de usuario
+    async update(id,user) {
+        return User.findOneAndUpdate(id, user, {new: true});
+    };
+
+    //DELETE
+    //Borrar un usuario
+    async delete(id){
+        return await User.findOneAndDelete(id);
+    };
 }
 
 const userController = new UserController;
