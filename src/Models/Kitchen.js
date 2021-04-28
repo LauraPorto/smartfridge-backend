@@ -4,7 +4,6 @@ const ObjectId = mongoose.Types.ObjectId;
 let kitchenSchema = mongoose.Schema({
     storeId: {
         type: ObjectId,
-        required: true, 
         ref: 'Store'
     },
     userId: {
