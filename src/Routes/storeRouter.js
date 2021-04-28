@@ -14,13 +14,25 @@ router.get('/', async (req, res) => {
     }catch(error){
         return res.status(500).json({
             message: error.message
-        })
+        });
     }
 });
 
+//Todos los ingredientes vetados
+router.get('/exception', async (req, res) => {
+    try{
+        const allIngredients = await storeController.allForbiddenIngredients();
+        return res.json(allIngredients);
+    }catch(error){
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+})
+
 //DELETE 
 //Borrar ingredientes
-router.delete('/:id', async (res, res) => {
+router.delete('/:id', async (req, res) => {
     try{
         let id = req.params.id;
         let ingredientDeleted = await storeController.delete(id);
@@ -31,4 +43,53 @@ router.delete('/:id', async (res, res) => {
             message: error.message
         })
     }
-})
+});
+
+//Borrar ingredientes vetados
+router.delete('/exception/:id', async (req, res) => {
+    try{
+        let id = req.params.id;
+        let ingredientDeleted = await storeController.deleteForbidden(id);
+        let status = 'Ingredient deleted !';
+        res.json({status, ingredientDeleted});
+    }catch(error){
+        res.status(500).json({
+            message: error.message
+        })
+    }
+});
+
+//PUT 
+//Añadir ingredientes a la despensa
+router.put('/:name', async (req, res) => {
+    try{
+        const name = req.params.name;
+
+        const findIngredient = await storeController.addIngredients(name);
+
+        return res.status(200).json(findIngredient);
+
+    }catch(error){
+        res.status(500).json({
+            message: error.message
+        })
+    }
+});
+
+//Añadir ingredientes a la despensa
+router.put('/exception/:name', async (req, res) => {
+    try{
+        const name = req.params.name;
+
+        const findIngredient = await storeController.addForbiddenIngredients(name);
+
+        return res.status(200).json(findIngredient);
+
+    }catch(error){
+        res.status(500).json({
+            message: error.message
+        })
+    }
+});
+
+module.exports = router;

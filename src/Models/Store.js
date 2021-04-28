@@ -3,7 +3,7 @@ const ObjectId = mongoose.Types.ObjectId;
 
 let storeSchema = mongoose.Schema({
     userId: {
-        type: ObjetcId, 
+        type: ObjectId, 
         ref: 'User'
     }, 
     food: {

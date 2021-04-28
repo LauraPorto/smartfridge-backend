@@ -9,22 +9,42 @@ CONTROLLER DESPENSA: leer los datos almacenados en la despensa, añadir alimento
 class StoreController {
 
     //GET
-    //Leer los alimentos de la despensa 
+    //Todos los alimentos de la despensa 
     async allIngredients () {
-        return await Store.find();
+        return await Store.food.find();
     };
 
+    //Todos los ingredientes vetados
+    async allForbiddenIngredients () {
+        return await Store.forbiddenFood.find();
+    }
+
     //PUT
-    //Añadir alimentos de la despensa 
-    async addIngredients (id) {
-        return await Store.findById(id);
+    //Añadir alimentos a la despensa 
+    async addIngredients (name) {
+        await Store.food.findOne({name: name});
+        const ingredientsAdded = Store.food.push(name);
+        return ingredientsAdded;
+    }
+
+    //Añadir alimentos prohibidos a la despensa 
+    async addForbiddenIngredients (name) {
+        await Store.forbiddenFood.findOne({name: name});
+        const ingredientsAdded = Store.forbiddenFood.push(name);
+        return ingredientsAdded;
     }
 
     //DELETE
     //Borrar alimentos de la despensa 
     async delete(id){
-        return await User.findByIdAndDelete(id);
+        return await Store.food.findByIdAndDelete(id);
     };
+
+    //Borrar alimentos vetados de la despensa 
+    async deleteForbidden(id){
+        return await Store.forbiddenFood.findByIdAndDelete(id);
+    };
+
 }
 
 const storeController = new StoreController;
