@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 class UserController {
 
-    //REGISTRO
+    //POST - Registro de usuario
     async signUp(user){
         return await User.create(user);
     }
@@ -14,7 +14,10 @@ class UserController {
 
     //LOG OUT 
 
-
+    //GET - Todos los usuarios
+    async indexAll(){
+        return await User.find();
+    }
 }
 
 const userController = new UserController;
