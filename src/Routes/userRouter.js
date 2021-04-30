@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
 
 //GET
 //Todos los usuarios
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     try {
         const allUsers = await userController.indexAll();
         return res.json(allUsers);
@@ -56,7 +56,7 @@ router.get('/', async (req, res) => {
 
 //PUT
 //Modificar los datos del usuario
-router.put('/:id', async (req, res) => {
+router.put('/:id', auth, async (req, res) => {
 
     try{
         const id = req.params.id;
@@ -73,7 +73,7 @@ router.put('/:id', async (req, res) => {
 
 //DELETE
 //Borrar un usuario 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
     try{
         let id = req.params.id;
         let result = await userController.delete(id);

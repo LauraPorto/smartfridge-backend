@@ -56,7 +56,7 @@ class UserController {
     //DELETE
     //Borrar un usuario
     async delete(id){
-        return await User.findByIdAndDelete(id);
+        return await User.findByIdAndRemove(id);
     };
 }
 

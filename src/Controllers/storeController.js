@@ -22,7 +22,7 @@ class StoreController {
     //PUT
     //Añadir alimentos a la despensa 
     async addIngredients (userId, name) {
-        await Store.findOne(userId);
+        await Store.findOne({userId});
         const foodStore = Store.food;
         const ingredientsAdded = foodStore.push({name: name});
         return ingredientsAdded;
