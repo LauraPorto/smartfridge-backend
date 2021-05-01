@@ -3,12 +3,12 @@ const storeController = require('../Controllers/storeController');
 
 //GET 
 //Todos los ingredientes 
-router.get('/', async (res, req) => {
+router.get('/', async (req, res) => {
     try{
-        const allIngredients = await storeController.allIngredients();
+        const allIngredients = await storeController.allStore();
         return res.json(allIngredients);
     }catch(error){
-        return res.json(500).json({
+        return res.status(500).json({
             message: error.message
         });
     }
@@ -16,13 +16,13 @@ router.get('/', async (res, req) => {
 
 
 //Ingredientes por Id
-router.get('/:id', async (res, req) => {
+router.get('/:id', async (req, res) => {
     try{
         const id = req.params.id;
-        const ingredientId = await Store.ingredientsById(id);
+        const ingredientId = await Store.storeById(id);
         return res.json(ingredientId);
     }catch(error){
-        return res.json(500).json({
+        return res.status(500).json({
             message: error.message
         });
     }
@@ -30,13 +30,13 @@ router.get('/:id', async (res, req) => {
 
 
 //Ingredientes por nombre
-router.get('/:name', async (res, req) => {
+router.get('/:name', async (req, res) => {
     try{
         const name = req.params.name;
-        const ingredientName = await Store.ingredientsByName(name);
+        const ingredientName = await Store.storeByName(name);
         return res.json(ingredientName);
     }catch(error){
-        return res.json(500).json({
+        return res.status(500).json({
             message: error.message
         });
     }

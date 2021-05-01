@@ -3,15 +3,15 @@ const Store = require('../Models/Store');
 
 class StoreController {
 
-    async allIngredients () {
+    async allStore () {
         return await Store.find();
     };
 
-    async ingredientsById (id) {
+    async storeById (id) {
         return await Store.findById(id);
     }
 
-    async ingredientsByName (name) {
+    async storeByName (name) {
         return await Store.findOne({name: name});
     };
 

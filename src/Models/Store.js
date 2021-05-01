@@ -9,7 +9,7 @@ let storeSchema = mongoose.Schema({
     name: {
         type: String
     }, 
-    id: {
+    apiId: {
         type: String
     }, 
     creationDate: {
