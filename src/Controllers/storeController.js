@@ -1,14 +1,19 @@
 const Store = require('../Models/Store');
-const User = require('../Models/User');
 
-
-/*
-CONTROLLER DESPENSA: leer los datos almacenados en la despensa, añadir alimentos a la despensa, eliminar alimentos de la despensa
-*/
 
 class StoreController {
 
- 
+    async allIngredients () {
+        return await Store.find();
+    };
+
+    async ingredientsById (id) {
+        return await Store.findById(id);
+    }
+
+    async ingredientsByName (name) {
+        return await Store.findOne({name: name});
+    };
 
 }
 
