@@ -12,7 +12,7 @@ const QUERY_STRING = MONGO_USER ?
 `${MONGO_SERVER}://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/${MONGO_DBNAME}`:
 `mongodb://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DBNAME}`
 
-const db = mongoose.connect('mongodb+srv://admin:admin1234@cluster0.aeplm.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true});
+const db = mongoose.connect('mongodb+srv://admin:NfgYgG1Qb64B8LON@cluster0.aeplm.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true});
 
 module.exports = db.then((result) => {
     console.log('database connection success');

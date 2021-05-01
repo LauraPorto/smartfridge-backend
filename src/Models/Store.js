@@ -6,13 +6,11 @@ let storeSchema = mongoose.Schema({
         type: ObjectId, 
         ref: 'User'
     }, 
-    food: {
-        type: Array, 
-        default: []
+    name: {
+        type: String
     }, 
-    forbiddenFood: {
-        type: Array, 
-        default: []
+    id: {
+        type: String
     }, 
     creationDate: {
         type: Date

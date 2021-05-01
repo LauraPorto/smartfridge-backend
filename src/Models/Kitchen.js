@@ -10,18 +10,16 @@ let kitchenSchema = mongoose.Schema({
         type: ObjectId, 
         ref: 'User'
     },
-    name: {
-        type: String, 
-        required: true
+    food: {
+        type: Array,
+        default: []
     }, 
-    recipe: {
-        ingredients :{
-            type: Array,
-            default: []
-        }, 
-        content : {
-            type: String
-        }
+    forbiddenFood: {
+        type: Array, 
+        default: []
+    }, 
+    creationDate: {
+        type: Date
     }
 });
 
