@@ -3,7 +3,7 @@ const Kitchen = require('../Models/Kitchen');
 
 class KitchenController {
 
-       //GET
+    //GET
     //Todos los alimentos de mi cocina 
     async allIngredients () {
         return await Kitchen.find();
