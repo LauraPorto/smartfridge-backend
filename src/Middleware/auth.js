@@ -7,7 +7,7 @@ when rendering the future appointments or deleten them */
 const auth =  async (req, res, next) => {
     try{
         const auth = req.headers.authorization;
-        // const token = auth.split(' ')[1];
+        const token = auth.split(' ')[1];
         const payload = jwt.verify(auth,secret)
         if(!payload){
             throw new Error('Cannot be verified')

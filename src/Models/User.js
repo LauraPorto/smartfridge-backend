@@ -29,6 +29,11 @@ let userSchema = mongoose.Schema({
         type: String, 
         required: true
     },
+    role: {
+        type: String, 
+        default: 'user',
+        enum: ['user', 'admin']
+    },
     creationDate: {
         tye: Date
     }
