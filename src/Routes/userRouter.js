@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const userController = require('../Controllers/userController');
 const auth = require('../middleware/auth');
+const adminAuth = require('../Middleware/adminAuth');
 
 //POST
 //Registro de usuarios
@@ -73,7 +74,7 @@ router.put('/:id', auth, async (req, res) => {
 
 //DELETE
 //Borrar un usuario 
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try{
         let id = req.params.id;
         let result = await userController.delete(id);

@@ -32,11 +32,9 @@ class UserController {
             tokenCreationDate: new Date
         };
 
+        const token = jwt.sign(payload, secret);
         //JSON con el payload firmado
-        return {
-            token: jwt.sign(payload, secret),
-            id: user.id
-        }
+        return ({token, user});
     };
 
     //LogOut
