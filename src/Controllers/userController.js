@@ -16,7 +16,7 @@ class UserController {
     async logIn(email, password){
         const user = await User.findOne({email}) 
 
-        //Buscamos el email del usuario en la BBDD
+        //Buscamos el email del usuario en la base de datos
         if(!user){
             return 'Email not found';
         }
