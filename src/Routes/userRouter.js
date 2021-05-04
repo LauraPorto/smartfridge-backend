@@ -55,6 +55,19 @@ router.get('/', auth, async (req, res) => {
     }
 });
 
+//Usuario por Id
+router.get('/:id', auth, async (req, res) => {
+    try {
+        let id = req.params.id;
+        const user = await userController.indexById(id);
+        return res.json(user);
+    }catch(error){
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
 //PUT
 //Modificar los datos del usuario
 router.put('/:id', auth, async (req, res) => {
@@ -74,7 +87,7 @@ router.put('/:id', auth, async (req, res) => {
 
 //DELETE
 //Borrar un usuario 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
     try{
         let id = req.params.id;
         let result = await userController.delete(id);

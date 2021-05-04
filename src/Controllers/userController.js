@@ -34,15 +34,18 @@ class UserController {
 
         const token = jwt.sign(payload, secret);
         //JSON con el payload firmado
-        return ({token, user});
+        return {token, user};
     };
-
-    //LogOut
 
     //GET
     //Todos los usuarios
     async indexAll(){
         return await User.find();
+    };
+
+    //Usuario por Id
+    async indexById(id){
+        return await User.findById(id)
     };
 
     //PUT
