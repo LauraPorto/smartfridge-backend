@@ -7,8 +7,8 @@ when rendering the future appointments or deleten them */
 const auth =  async (req, res, next) => {
     try{
         const auth = req.headers.authorization;
-        const token = auth.split(' ')[1];
-        const payload = jwt.verify(token,secret)
+        // const token = auth.split(' ')[1];
+        const payload = jwt.verify(auth, secret);
         if(!req.params.id){
             next();
         }else if(req.params.id == payload.userId){
