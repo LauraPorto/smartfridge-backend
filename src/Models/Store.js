@@ -6,7 +6,7 @@ let storeSchema = mongoose.Schema({
         type: ObjectId, 
         ref: 'User'
     }, 
-    name: {
+    title: {
         type: String
     }, 
     apiId: {

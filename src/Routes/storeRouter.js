@@ -42,6 +42,36 @@ router.get('/:name', async (req, res) => {
     }
 });
 
+//POST
+//Guardar una receta en favoritos
+router.post('/', async (req, res) => {
+    try{
+        const apiId = req.params.apiId;
+        const title = req.params.title; 
+        const result = await storeController.addFavorite (title, apiId);
+        const status = 'Recipe save on Fav';
+        return res.json({result, status})
+    }catch(error){
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
+//DELETE
+//Borrar una receta de favoritos
+router.delete('/', async (req, res) => {
+    try{
+        const apiId = req.params.apiId;
+        const result = await storeController.deleteFavorite(apiId);
+        const status = 'Recipe deleted on Fav';
+        return res.json({result, status})
+    }catch(error){
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+})
 
 
 module.exports = router;

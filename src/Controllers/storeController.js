@@ -15,6 +15,14 @@ class StoreController {
         return await Store.findOne({name: name});
     };
 
+    async addFavorite (title, apiId){
+        return await Store.create({title: title, apiId: apiId})
+    };
+
+    async deleteFavorite (apiId){
+        return await Store.deleteOne({apiId: apiId})
+    }
+
 }
 
 const storeController = new StoreController;
