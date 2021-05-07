@@ -4,13 +4,15 @@ const ObjectId = mongoose.Types.ObjectId;
 let storeSchema = mongoose.Schema({
     userId: {
         type: ObjectId, 
-        ref: 'User'
+        ref: 'User',
+        required: true
     }, 
-    name: {
+    title: {
         type: String
     }, 
     apiId: {
-        type: String
+        type: String, 
+        required: true
     }, 
     creationDate: {
         type: Date
