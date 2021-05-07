@@ -7,12 +7,12 @@ class StoreController {
         return await Store.find();
     };
 
-    async storeById (id) {
-        return await Store.findById(id);
+    async storeById (userId) {
+        return await Store.findById(userId);
     }
 
-    async storeByName (name) {
-        return await Store.findOne({name: name});
+    async storeByName (title) {
+        return await Store.findOne({title: title});
     };
 
     async addFavorite (title, apiId){
