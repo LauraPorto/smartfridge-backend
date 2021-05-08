@@ -19,8 +19,8 @@ class StoreController {
         return await Store.create({title: title, apiId: apiId, userId})
     };
 
-    async deleteFavorite (title, apiId, userId){
-        return await Store.deleteOne({title: title, apiId: apiId, userId})
+    async deleteFavorite (apiId, userId){
+        return await Store.deleteOne({apiId: apiId, userId})
     }
 
 }

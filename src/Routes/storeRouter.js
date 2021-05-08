@@ -62,12 +62,11 @@ router.post('/', async (req, res) => {
 
 //DELETE
 //Borrar una receta de favoritos
-router.delete('/:apiId', async (req, res) => {
+router.delete('/:userId', async (req, res) => {
     try{
-        const userId = req.body.userId;
-        const apiId = req.params.apiId;
-        const title = req.body.title;
-        const result = await storeController.deleteFavorite(title, apiId, userId);
+        const userId = req.params.userId;
+        const apiId = req.body.apiId;
+        const result = await storeController.deleteFavorite(apiId, userId);
         const status = 'Recipe deleted on Fav';
         return res.json({result, status})
     }catch(error){
