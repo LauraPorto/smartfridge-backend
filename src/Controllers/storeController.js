@@ -8,19 +8,19 @@ class StoreController {
     };
 
     async storeById (userId) {
-        return await Store.findById(userId);
+        return await Store.find({userId: userId});
     }
 
     async storeByName (title) {
         return await Store.findOne({title: title});
     };
 
-    async addFavorite (title, apiId){
-        return await Store.create({title: title, apiId: apiId})
+    async addFavorite (title, apiId, userId){
+        return await Store.create({title: title, apiId: apiId, userId})
     };
 
-    async deleteFavorite (apiId){
-        return await Store.deleteOne({apiId: apiId})
+    async deleteFavorite (title, apiId, userId){
+        return await Store.deleteOne({title: title, apiId: apiId, userId})
     }
 
 }

@@ -5,7 +5,6 @@ const storeController = require('../Controllers/storeController');
 //Todos los ingredientes 
 router.get('/', async (req, res) => {
     try{
-        const userId = req.body.userId;
         const allFavRecipes = await storeController.allStore();
         return res.json(allFavRecipes);
     }catch(error){
@@ -17,10 +16,10 @@ router.get('/', async (req, res) => {
 
 
 //Ingredientes por Id
-router.get('/:id', async (req, res) => {
+router.get('/:userId', async (req, res) => {
     try{
         const userId = req.params.userId;
-        const myRecipes = await Store.storeById(userId);
+        const myRecipes = await storeController.storeById(userId);
         return res.json(myRecipes);
     }catch(error){
         return res.status(500).json({
@@ -35,7 +34,7 @@ router.get('/:userId/:title', async (req, res) => {
     try{
         const title = req.params.title;
         const userId = req.params.userId;
-        const recipeName = await Store.storeByName(title);
+        const recipeName = await storeController.storeByName(title);
         return res.json(recipeName);
     }catch(error){
         return res.status(500).json({
@@ -46,12 +45,12 @@ router.get('/:userId/:title', async (req, res) => {
 
 //POST
 //Guardar una receta en favoritos
-router.post('/:userId', async (req, res) => {
+router.post('/', async (req, res) => {
     try{
         const apiId = req.body.apiId;
         const title = req.body.title; 
-        const userId = req.params.userId;
-        const result = await storeController.addFavorite (title, apiId);
+        const userId = req.body.userId;
+        const result = await storeController.addFavorite (title, apiId, userId);
         const status = 'Recipe save on Fav';
         return res.json({result, status})
     }catch(error){
@@ -63,11 +62,12 @@ router.post('/:userId', async (req, res) => {
 
 //DELETE
 //Borrar una receta de favoritos
-router.delete('/:userId', async (req, res) => {
+router.delete('/:apiId', async (req, res) => {
     try{
-        const userId = req.params.userId;
+        const userId = req.body.userId;
         const apiId = req.params.apiId;
-        const result = await storeController.deleteFavorite(apiId);
+        const title = req.body.title;
+        const result = await storeController.deleteFavorite(title, apiId, userId);
         const status = 'Recipe deleted on Fav';
         return res.json({result, status})
     }catch(error){

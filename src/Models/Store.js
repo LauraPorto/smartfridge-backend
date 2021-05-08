@@ -4,8 +4,7 @@ const ObjectId = mongoose.Types.ObjectId;
 let storeSchema = mongoose.Schema({
     userId: {
         type: ObjectId, 
-        ref: 'User',
-        required: true
+        ref: 'User'
     }, 
     title: {
         type: String

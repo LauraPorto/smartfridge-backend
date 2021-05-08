@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
 
 //GET
 //Todos los usuarios
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const allUsers = await userController.indexAll();
         return res.json(allUsers);
