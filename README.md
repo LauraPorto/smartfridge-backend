@@ -1,12 +1,12 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://i.imgur.com/AZ2iWek.png" alt="Project logo"></a>
+ <img src="https://www.flaticon.com/svg/vstatic/svg/1662/1662402.svg?token=exp=1620736423~hmac=702bbf26fb7519da9894e8e54cc9b591" alt="Project logo"></a>
 </p>
 <h3 align="center">SMART FRIDGE-backend</h3>
 
 <div align="center">
 
-[![Hackathon](https://img.shields.io/badge/hackathon-name-orange.svg)](http://hackathon.url.com)
+
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
@@ -34,19 +34,19 @@
 
 ## 🧐 Problem Statement <a name = "problem_statement"></a>
 
-Este proyecto aborda la parte Backend del proyecto full stack para final del bootcamps de GeeksHubs. La idea del trabajo es poder buscar recetas fácilmente con los ingredientes que hay en tu nevera. De este modo, se ofrecen las diferentes posibilidades para poder encontrar tu plato ideal sin esfuerzo, mediante una lista de tus alimentos para la búsqueda.
-Además de esto, también existe la opción de explorar por la aplicación y descubrir recetas nuevas en función de diferentes criterios, como la dieta (gluten, vegan, etc.), la preparación en minutos o los ingredientes extendidos para dicha receta. Además, podrás guardar en favoritos todas las recetas que quieras, para poder tener acceso rápido a tus platos favoritos.  
+This project addresses the Backend part of the full stack project at the end of the GeeksHubs bootcamps. The idea of ​​the job is to be able to easily search for recipes with the ingredients that are in your fridge. In this way, the different possibilities are offered to be able to find your ideal dish without effort, by means of a list of your foods to search.
+In addition to this, there is also the option to explore the application and discover new recipes based on different criteria, such as diet (gluten, vegan, etc.), preparation in minutes or extended ingredients for said recipe. In addition, you can save all the recipes you want to favorites, so you can have quick access to your favorite dishes.
 
 ## 💡 Idea / Solution <a name = "idea"></a>
 
-Para poder desarrollar la anterior idea, se ha construido un esquema con las dos tablas fundamentales de este proyecto Backend. A pesar de tratarse de un proyecto MERN, se adjunta a continuación ambas tablas con sus datos para facilitar la comprensión del proyecto. 
+In order to develop the previous idea, a diagram has been built with the two fundamental tables of this Backend project. Despite being a MERN project, both tables with their data are attached below to facilitate understanding of the project.
 
 TABLA RELACIONAL
 
 
 ## 🚀 Future Scope <a name = "future_scope"></a>
 
-Se está trabajando en la construcción de más roles de usuario con acceso reservado a diferentes rutas de backend e interacciones con la base de datos, que luego tendrán salida también en el frontend.
+Work is being done on the construction of more user roles with reserved access to different backend routes and interactions with the database, which will then also have output on the frontend.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
  
@@ -55,7 +55,7 @@ and testing purposes. See [deployment](#deployment) for notes on how to deploy t
 
 ### Prerequisites
 
-El proyecto está en un entorno de desarrollo Docker, que incluye también Node. Por tanto, para poder arrancar el proyecto con todas las dependencias utilizadas, debemos ejecutar: 
+The project is in a Docker development environment, which also includes Node. Therefore, in order to start the project with all the dependencies used, we must execute:
 
 ```
 Docker-compose up --build
@@ -64,24 +64,23 @@ Docker-compose up --build
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running.
-Para poder arrancar la base de datos y el servidor una vez estén instaladas todas las dependencias, se ejecutará el comando siguiente:
+In order to start the database and the server once all the dependencies are installed, the following command will be executed:
 
 ```
 Docker-compose up
 ```
 
-
 ## 🎈 Usage <a name="usage"></a>
 
-El backend de la web nos ofrece una serie de rutas a través de las cuales podemos interactuar con nuestra base de datos mediante el protocolo APIRestFul. 
-Por una parte, en la parte del Usuario, tenemos el registro de usuario mediante la creación de una nueva instancia del modelo User (POST), así como el log in una vez está registrado. Además, existe también la opción de modificar los datos personales de registro (UPDATE), así como el borrado de la cuenta registrada (DELETE). A través del método GET podemos conocer los datos de todos los usuarios registrados (rol de usuario distinto a User).
-Por su parte, en la parte de Store, nos encontramos con la opción POST de guardar un plato como favorito y poder borrarlo de nuestra lista de favoritos (DELETE). Además, también tenemos la opción de lectura de datos (GET), con la opción de obtener todos nuestros platos favoritos, así como todos los platos favoritos de todos los usuarios, filtrados también por Id y por Título de la receta, reservado para el rol de usuario Admin (futuras mejoras).
-Todas estas rutas están disponibles y pueden ser probadas en Postman:
+The backend of the web offers us a series of routes through which we can interact with our database through the APIRestFul protocol.
+On the one hand, on the User side, we have the user registration by creating a new instance of the User model (POST), as well as the log in once it is registered. In addition, there is also the option to modify the personal registration data (UPDATE), as well as the deletion of the registered account (DELETE). Through the GET method we can know the data of all registered users (user role different from User).
+For its part, in the Store part, we find the POST option to save a dish as a favorite and be able to delete it from our favorites list (DELETE). In addition, we also have the option to read data (GET), with the option to obtain all our favorite dishes, as well as all the favorite dishes of all users, also filtered by Id and by Recipe Title, reserved for the role Admin user (future improvements).
+All of these routes are available and can be tested in Postman:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/14551978-babf3fe9-9f94-48df-919c-c27172d750d9?action=collection%2Ffork&collection-url=entityId%3D14551978-babf3fe9-9f94-48df-919c-c27172d750d9%26entityType%3Dcollection%26workspaceId%3Dd2caca0a-3cd4-4c24-a9f5-39d9e4bc00e1)
 
-Además, se ha trabajado también con la API Spoonacular, de donde se extrae toda la información de las recetas y los ingredientes. Se realizan consultas de tipo GET, mediante las rutas de búsqueda de ingredientes, búsqueda de recetas por ingredientes, obtención de los detalles de la receta, así como la búsqueda aleatoria de recetas en función de criterios.
-Se adjunta también a continuación todas las rutas que ofrece la API para poder probar en Postman: 
+In addition, we have also worked with the Spoonacular API, from which all the information on the recipes and ingredients is extracted. GET-type queries are carried out, through the search routes for ingredients, search for recipes by ingredients, obtaining the details of the recipe, as well as the random search for recipes based on criteria.
+Also attached below are all the routes offered by the API to be able to test in Postman:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/14551978-6092a68c-465e-4a55-aa31-c6f12f017b9b?action=collection%2Ffork&collection-url=entityId%3D14551978-6092a68c-465e-4a55-aa31-c6f12f017b9b%26entityType%3Dcollection%26workspaceId%3Dd2caca0a-3cd4-4c24-a9f5-39d9e4bc00e1)
 
@@ -108,4 +107,4 @@ Se adjunta también a continuación todas las rutas que ofrece la API para poder
 
 ## 🎉 Acknowledgments <a name = "acknowledgments"></a>
 
-A todos mis compañeros de Bootcamp, por la ayuda, el apoyo y las risas, cuando se necesitan.
+To all my fellow Bootcamps, for help, support, and laughs, when needed.
