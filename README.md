@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://www.flaticon.com/svg/vstatic/svg/1662/1662402.svg?token=exp=1620736423~hmac=702bbf26fb7519da9894e8e54cc9b591" alt="Project logo"></a>
+ <img src="src/assets/fridge.png" alt="Project logo"></a>
 </p>
 <h3 align="center">SMART FRIDGE-backend</h3>
 
@@ -41,7 +41,7 @@ In addition to this, there is also the option to explore the application and dis
 
 In order to develop the previous idea, a diagram has been built with the two fundamental tables of this Backend project. Despite being a MERN project, both tables with their data are attached below to facilitate understanding of the project.
 
-TABLA RELACIONAL
+![Captura de pantalla 2021-05-11 a las 17 21 14](https://user-images.githubusercontent.com/77154578/117842171-f79f4b00-b27d-11eb-9241-1b9146b60c80.png)
 
 
 ## 🚀 Future Scope <a name = "future_scope"></a>
