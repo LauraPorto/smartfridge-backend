@@ -11,7 +11,8 @@ let storeSchema = mongoose.Schema({
     }, 
     apiId: {
         type: String, 
-        required: true
+        required: true,
+        unique: true
     }, 
     creationDate: {
         type: Date
