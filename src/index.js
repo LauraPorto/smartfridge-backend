@@ -24,6 +24,6 @@ db.then(() => {
     // app.listen(port, () => {
     //     console.log(`Server app listening at http://localhost:${port}`)
     // })
-    app.listen(process.env.PORT || 3000, 
+    app.listen(process.env.PORT || 3001, 
         () => console.log("Server is running..."));
 }).catch(console.log)
