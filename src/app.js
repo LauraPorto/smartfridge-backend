@@ -17,7 +17,17 @@ app.use(cors());
 // use the express-static middleware
 app.use(express.static("public"))
 
-app.get('/user/', userRouter);
+//Todos los usuarios
+app.get('/', async (req, res) => {
+    try {
+        const allUsers = await userController.indexAll();
+        return res.json(allUsers);
+    }catch(error){
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+});
 
 // define the first route
 app.get("/", function (req, res) {
