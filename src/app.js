@@ -23,5 +23,7 @@ app.get("/adios", function (req, res) {
   })
 
 // start the server listening for requests
-app.listen(process.env.PORT || 3000, 
+db.then(() => {
+    app.listen(process.env.PORT || 3000, 
 	() => console.log("Server is running..."));
+}).catch(console.log);
