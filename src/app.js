@@ -6,8 +6,8 @@ const db = require ('./db');
 
 const router = require ('./router');
 
-//app.use(express.json());
-app.use(router);
+app.use(express.json());
+//app.use(router);
 
 // use the express-static middleware
 app.use(express.static("public"))
