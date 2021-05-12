@@ -4,7 +4,8 @@ const express = require("express");
 const app = express();
 const db = require ('./db');
 const cors = require('cors');
-
+const userRouter = require('./Routes/userRouter');
+const storeRouter = require('./Routes/storeRouter');
 
 //app.use(express.json());
 app.use(cors());
