@@ -1,5 +1,4 @@
 // create an express app
-require('dotenv').config();
 const express = require("express")
 const app = express()
 const router = require ('./router');
@@ -18,5 +17,5 @@ app.get("/adios", function (req, res) {
   })
 
 // start the server listening for requests
-app.listen(process.env.PORT || 3001, 
+app.listen(process.env.PORT || 3000, 
 	() => console.log("Server is running..."));
