@@ -16,8 +16,8 @@ const router = require('express').Router();
 // use the express-static middleware
 app.use(express.static("public"))
 
-router.use('/user');
-router.use('/store');
+app.use('/user');
+app.use('/store');
 
 // define the first route
 app.get("/", function (req, res) {
