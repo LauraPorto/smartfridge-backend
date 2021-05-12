@@ -8,7 +8,7 @@ const router = require ('./router');
 
 //app.use(express.json());
 app.use(cors());
-//app.use(router);
+app.use(express.static(router));
 
 // use the express-static middleware
 app.use(express.static("public"))
