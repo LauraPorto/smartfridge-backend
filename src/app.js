@@ -2,7 +2,7 @@
 const express = require("express")
 const app = express()
 const router = require ('./router');
-const db = require ('./db');
+//const db = require ('./db');
 
 // use the express-static middleware
 app.use(express.static("public"))
