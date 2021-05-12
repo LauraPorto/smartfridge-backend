@@ -1,14 +1,15 @@
 // create an express app
 require('dotenv').config();
-const express = require("express")
-const app = express()
+const express = require("express");
+const app = express();
 const db = require ('./db');
 const cors = require('cors');
-const router = require ('./router');
+
 
 //app.use(express.json());
 app.use(cors());
-app.use(express.static(router));
+// app.use(express.static(router));
+const router = require('express').Router();
 
 // use the express-static middleware
 app.use(express.static("public"))
