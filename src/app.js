@@ -8,7 +8,7 @@ const router = require('express');
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static(router));
+app.use(router);
 
 
 
