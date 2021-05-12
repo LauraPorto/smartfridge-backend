@@ -16,8 +16,8 @@ app.use(cors());
 // use the express-static middleware
 app.use(express.static("public"))
 
-app.use(express.static('/user'));
-app.use(express.static('/store'));
+app.get('/user/');
+//app.use(express.static('/store'));
 
 // define the first route
 app.get("/", function (req, res) {
@@ -34,4 +34,3 @@ db.then(() => {
 	() => console.log("Server is running..."));
 }).catch(console.log);
 
-module.exports = router;
