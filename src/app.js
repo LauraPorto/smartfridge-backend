@@ -4,8 +4,10 @@ const express = require("express")
 const app = express()
 const db = require ('./db');
 
-// const router = require ('./router');
+const router = require ('./router');
 
+app.use(express.json());
+app.use(router);
 
 // use the express-static middleware
 app.use(express.static("public"))

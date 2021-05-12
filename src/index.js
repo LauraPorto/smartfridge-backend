@@ -4,20 +4,20 @@
 // const db = require ('./db');
 const cors = require('cors');
 
-const app = express();
+// const app = express();
 // const port = 3001;
 
-app.use(express.json());
+// app.use(express.json());
 app.use(cors());
-app.use(router);
+// app.use(router);
 
 // use the express-static middleware
 // app.use(express.static("public"))
 
 // define the first route
-app.get("/", function (req, res) {
-  res.send("Hello World!")
-})
+// app.get("/", function (req, res) {
+//   res.send("Hello World!")
+// })
 
 
 db.then(() => {
