@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
 
 //GET
 //Todos los usuarios
-router.get('/', async (req, res) => {
+const allUsers = ('/', async (req, res) => {
     try {
         const allUsers = await userController.indexAll();
         return res.json(allUsers);
@@ -102,3 +102,4 @@ router.delete('/:id', async (req, res) => {
 
 
 module.exports = router;
+module.exports = allUsers;

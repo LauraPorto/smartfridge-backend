@@ -4,8 +4,8 @@ const express = require("express");
 const app = express();
 const db = require ('./db');
 const cors = require('cors');
-const userRouter = require('./Routes/userRouter');
-const storeRouter = require('./Routes/storeRouter');
+// const userRouter = require('./Routes/userRouter');
+// const storeRouter = require('./Routes/storeRouter');
 
 //app.use(express.json());
 app.use(cors());
@@ -16,7 +16,7 @@ app.use(cors());
 // use the express-static middleware
 app.use(express.static("public"))
 
-app.get('/user/', userRouter);
+app.get('/user/', allUsers());
 //app.use(express.static('/store'));
 
 // define the first route
