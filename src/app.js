@@ -11,11 +11,13 @@ const cors = require('cors');
 app.use(cors());
 // app.use(express.static(router));
 const router = require('express').Router();
-router.use('/user');
-router.use('/store');
+
 
 // use the express-static middleware
 app.use(express.static("public"))
+
+router.use('/user');
+router.use('/store');
 
 // define the first route
 app.get("/", function (req, res) {
