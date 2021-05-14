@@ -5,7 +5,7 @@ const auth = require('../middleware/auth');
 
 //POST
 //Registro de usuarios
-router.post('/user/signup', async (req, res) => {
+router.post('/signup', async (req, res) => {
     try{
         const user = await userController.signUp(req.body);
         return res.json(user)
@@ -17,7 +17,7 @@ router.post('/user/signup', async (req, res) => {
 });
 
 //LogIn 
-router.post('/user/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     try{
         
         let email = req.body.email;
@@ -44,7 +44,7 @@ router.post('/user/login', async (req, res) => {
 
 //GET
 //Todos los usuarios
-router.get('/user/', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const allUsers = await userController.indexAll();
         return res.json(allUsers);
@@ -70,7 +70,7 @@ router.get('/:id', auth, async (req, res) => {
 
 //PUT
 //Modificar los datos del usuario
-router.put('/user/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
 
     try{
         const id = req.params.id;
@@ -87,7 +87,7 @@ router.put('/user/:id', async (req, res) => {
 
 //DELETE
 //Borrar un usuario 
-router.delete('/user/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try{
         let id = req.params.id;
         let result = await userController.delete(id);
