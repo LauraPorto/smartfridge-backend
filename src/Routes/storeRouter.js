@@ -14,7 +14,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-
 //Ingredientes por Id
 router.get('/:userId', async (req, res) => {
     try{
@@ -27,7 +26,6 @@ router.get('/:userId', async (req, res) => {
         });
     }
 });
-
 
 //Ingredientes por nombre
 router.get('/:userId/:title', async (req, res) => {

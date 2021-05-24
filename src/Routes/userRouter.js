@@ -40,8 +40,6 @@ router.post('/login', async (req, res) => {
     };
 });
 
-//LogOut
-
 //GET
 //Todos los usuarios
 router.get('/', async (req, res) => {
