@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 app.use(router);
 
-// start the server listening for requests
+//arrancamos el servidor
 db.then(() => {
     app.listen(process.env.PORT || 3000, 
 	() => console.log("Server is running..."));

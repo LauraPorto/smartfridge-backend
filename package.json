@@ -2,10 +2,10 @@
   "name": "toeat-backend",
   "version": "1.0.0",
   "description": "Backend",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
