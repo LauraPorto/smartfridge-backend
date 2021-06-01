@@ -12,7 +12,7 @@ app.use(router);
 
 //arrancamos el servidor
 db.then(() => {
-    app.listen(process.env.PORT || 3000, 
+    app.listen(process.env.PORT || 3001, 
 	() => console.log("Server is running..."));
 }).catch(console.log);
 
