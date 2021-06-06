@@ -84,6 +84,8 @@ Also attached below are all the routes offered by the API to be able to test in 
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/14551978-6092a68c-465e-4a55-aa31-c6f12f017b9b?action=collection%2Ffork&collection-url=entityId%3D14551978-6092a68c-465e-4a55-aa31-c6f12f017b9b%26entityType%3Dcollection%26workspaceId%3Dd2caca0a-3cd4-4c24-a9f5-39d9e4bc00e1)
 
+Check the [Frontend](https://github.com/LauraPorto/smartfridge-frontend/tree/main/smartfridge-frontend) to know the complete project !
+
 
 ## ⛏️ Built With <a name = "tech_stack"></a>
 
